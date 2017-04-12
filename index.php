@@ -1,21 +1,23 @@
 <?php
-require 'php/Teacrypt.php';
-is_dir('.sess') or mkdir('.sess');
-$hash = md5($_SERVER['HTTP_USER_AGENT'].$_SERVER['REMOTE_ADDR']);
-if(file_exists('.sess/'.$hash)){
-	$a = json_decode(file_get_contents('.sess/'.$hash),true);
-	$a = isset($a['key'])? Teacrypt::sgr21dr($a['key'],"triosemut123"):false;
-	$key = file_exists('.sess/key')?Teacrypt::sgr21dr(file_get_contents('.sess/key'),"triosemut123"):false;
-	if($a==$key){
-		$login = true;
-	} else {
-		$login = false;
-	}
-} else {
-	$login = false;
-}	
-
+if(isset($_GET['logout'])){
+	$logout = '.sess/'.trim($_GET['logout']);
+	file_exists($logout) and unlink($logout) xor
+	header("location:?ref=auth&act=logout");
+	exit('aaa');
+}
+require 'php/login_status.php';
 if($login===false){
+if(isset($_POST['login'],$_POST['username'],$_POST['password'])){
+	if(!is_dir('.sess')){
+		mkdir('.sess');
+	}
+if($_POST['username']=='ammarfaizi2' and $_POST['password']=='triosemut123'){		file_put_contents('.sess/'.$hash,$info);
+header("location:?auth=true");
+	} else {
+header("location:?auth=false");
+	}
+exit();
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -71,12 +73,28 @@ exit();
 		<!-- Require JS (REQUIRED) -->
 		<!-- Rename "main.default.js" to "main.js" and edit it if you need configure elFInder options or any things -->
 		<script data-main="./main.default.js" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.3.2/require.min.js"></script>
-
+<style>
+.lg
+{
+	margin:5%;
+	background-color:red;
+	width:40%;
+	height:35%;
+	padding-bottom:2%;
+	padding-top:1%;
+}
+</style>
 	</head>
 	<body>
-
+<center>
+<a href="?logout=<?php print $hash;?>">
+<div class="lg">
+<button>Logout</button>
+</div>
+</a>
 		<!-- Element where elFinder will be created (REQUIRED) -->
 		<div id="elfinder"></div>
 
 	</body>
+</center>
 </html>
