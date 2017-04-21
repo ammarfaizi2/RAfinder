@@ -1,5 +1,9 @@
 <?php
-
+require 'login_check.php';
+if($login==false){
+	header("content-type:application/json");
+	die("Permission denied !");
+}
 error_reporting(0); // Set E_ALL for debuging
 
 // load composer autoload before load elFinder autoload If you need composer
@@ -86,21 +90,7 @@ function access($attr, $path, $data, $volume) {
 
 // Documentation for connector options:
 // https://github.com/Studio-42/elFinder/wiki/Connector-configuration-options
-$opts = array(
-	// 'debug' => true,
-	'roots' => array(
-		array(
-			'driver'        => 'LocalFileSystem',           // driver for accessing file system (REQUIRED)
-			'path'=>$_SERVER['DOCUMENT_ROOT'],                 // path to files (REQUIRED)
-			'URL'           => "http".(isset($_SERVER['HTTPS'])?"s":"").'://'.$_SERVER['HTTP_HOST'].'/', // URL to files (REQUIRED)
-			'uploadDeny'    => array(),                // All Mimetypes not allowed to upload
-			'uploadAllow'   => array('all'),// Mimetype `image` and `text/plain` allowed to upload
-			'uploadOrder'   => array('deny','allow'),      // allowed Mimetype `image` and `text/plain` only
-			'accessControl' => 'allow'                     // disable and hide dot starting files (OPTIONAL)
-		)
-	)
-);
-
+require __DIR__.'/users/'.$info['username'].'.php';
 // run elFinder
 $connector = new elFinderConnector(new elFinder($opts));
 $connector->run();
