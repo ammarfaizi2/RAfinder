@@ -90,8 +90,8 @@ exit();
 </div>
 </a>
 <?php
-if(isset($info[$user])){
-	print $info[$user];
+if(isset($msg[$user])){
+	print $msg[$user];
 }?>
 		<!-- Element where elFinder will be created (REQUIRED) -->
 		<div id="elfinder"></div>
