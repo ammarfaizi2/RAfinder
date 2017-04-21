@@ -1,4 +1,11 @@
 <?php
+if(isset($_GET['logout'])){
+	setcookie("user",0,0);
+	setcookie("key",0,0);
+	setcookie("sess",0,0);
+	header("location:?ref=logout");
+	exit();
+}
 require __DIR__.'/php/login_status.php';
 if($login==false){
 require __DIR__.'/php/login.php';
@@ -71,7 +78,7 @@ exit();
 	</head>
 	<body>
 <center>
-<a href="?logout=<?php print $hash;?>">
+<a href="?logout=<?php print rstr(64);?>">
 <div class="lg">
 <button>Logout</button>
 </div>
