@@ -4,7 +4,7 @@ $opts = array(
 	'roots' => array(
 		array(
 			'driver'        => 'LocalFileSystem',
-			'path'=>$_SERVER['DOCUMENT_ROOT'].'/..',
+			'path'=>$_SERVER['DOCUMENT_ROOT'].'/../public_html',
 			'URL'           => 'https://www.redangel.cf/',
 			'uploadDeny'    => array(),
 			'uploadAllow'   => array('all'),
