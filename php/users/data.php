@@ -21,6 +21,14 @@ user : kemageta_red
 pass : triosemut123
 db   : kemageta_red
 </pre>
+',
+"esteh"=>'<pre>
+Login mysql pakai adminer
+
+host : localhost
+user : zeeb_esteh
+pass : triosemut123
+db   : zeeb_esteh</pre>
 '
 
 
