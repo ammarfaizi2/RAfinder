@@ -13,10 +13,11 @@ $u = array(
 
 $msg = array(
 "kemagetan"=>'<pre>
-nek arep login ning database tanpa cpanel lewat adminer
+nek arep login ning database tanpa cpanel iso lewat adminer
 
 user : kemageta_red
 pass : triosemut123
+db   : kemageta_red
 </pre>
 '
 
