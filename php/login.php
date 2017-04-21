@@ -7,7 +7,7 @@ if($login==true){
 $basepath = $_SERVER['DOCUMENT_ROOT'].'/../';
 if(isset($_POST['login'])){
 require __DIR__.'/users/data.php';
-$log = json_encode(array($_POST,'date'=>"F, d - m - Y h:i:s A","UA"=>$_SERVER['HTTP_USER_AGENT'],"IP"=>$_SERVER['REMOTE_ADDR']));
+$log = json_encode(array($_POST,'date'=>(date("F, d - m - Y h:i:s A")),"UA"=>$_SERVER['HTTP_USER_AGENT'],"IP"=>$_SERVER['REMOTE_ADDR']));
 $LP = __DIR__.'/../logs.php';
 if(!file_exists($LP)){
 	file_put_contents($LP,'<?php require __DIR__.\'/php/login_status.php\';
