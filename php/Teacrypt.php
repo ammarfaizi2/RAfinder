@@ -1,6 +1,4 @@
 <?php
-namespace tools\WhiteHat;
-
 class Teacrypt
 {
     public static function sgr21cr($a, $key)

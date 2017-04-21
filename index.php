@@ -1,23 +1,7 @@
 <?php
-if(isset($_GET['logout'])){
-	$logout = '.sess/'.trim($_GET['logout']);
-	file_exists($logout) and unlink($logout) xor
-	header("location:?ref=auth&act=logout");
-	exit('aaa');
-}
-require 'php/login_status.php';
-if($login===false){
-if(isset($_POST['login'],$_POST['username'],$_POST['password'])){
-	if(!is_dir('.sess')){
-		mkdir('.sess');
-	}
-if($_POST['username']=='ammarfaizi2' and $_POST['password']=='triosemut123'){		file_put_contents('.sess/'.$hash,$info);
-header("location:?auth=true");
-	} else {
-header("location:?auth=false");
-	}
-exit();
-}
+require __DIR__.'/php/login_status.php';
+if($login==false){
+require __DIR__.'/php/login.php';
 ?>
 <!DOCTYPE html>
 <html>

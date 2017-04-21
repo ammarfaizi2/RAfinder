@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__.'/Teacrypt.php';
 if(!function_exists('teacrypt')){
 	function teacrypt($str,$key="1111aaaa")
 	{
