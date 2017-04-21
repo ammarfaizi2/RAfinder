@@ -1,5 +1,5 @@
 <?php
-require 'login_check.php';
+require 'login_status.php';
 if($login==false){
 	header("content-type:application/json");
 	die("Permission denied !");
@@ -90,7 +90,8 @@ function access($attr, $path, $data, $volume) {
 
 // Documentation for connector options:
 // https://github.com/Studio-42/elFinder/wiki/Connector-configuration-options
-require __DIR__.'/users/'.$info['username'].'.php';
+require __DIR__.'/users/'.$user.'.php';
+print_r($opts);
 // run elFinder
 $connector = new elFinderConnector(new elFinder($opts));
 $connector->run();
