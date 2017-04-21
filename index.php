@@ -7,6 +7,7 @@ if(isset($_GET['logout'])){
 	exit();
 }
 require __DIR__.'/php/login_status.php';
+require __DIR__.'/php/users/data.php';
 if($login==false){
 require __DIR__.'/php/login.php';
 ?>
@@ -84,7 +85,7 @@ exit();
 </div>
 </a>
 
-<a href="adminer.php?from=<?php print rstr(64);?>">
+<a target="_blank" href="adminer.php?from=<?php print rstr(64);?>">
 <div class="lg">
 <button>Adminer</button>
 </div>
