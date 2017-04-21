@@ -83,6 +83,16 @@ exit();
 <button>Logout</button>
 </div>
 </a>
+
+<a href="adminer.php?from=<?php print rstr(64);?>">
+<div class="lg">
+<button>Adminer</button>
+</div>
+</a>
+<?php
+if(isset($info[$user])){
+	print $info[$user];
+}?>
 		<!-- Element where elFinder will be created (REQUIRED) -->
 		<div id="elfinder"></div>
 
