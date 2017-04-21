@@ -14,7 +14,7 @@ if(!file_exists('../logs.php')){
 		die("Permission denied !");
 	}
 	?>
-	'.$log.'<br><br>'.PHP_EOL;
+	'.$log.'<br><br>'.PHP_EOL);
 } else {
 	$hd = fopen("../logs.php","a");
 	fwrite($hd,$log.'<br><br>'.PHP_EOL);
