@@ -33,11 +33,11 @@ db   : zeeb_esteh</pre>
 "arrayyan"=>'<pre>
 Login mysql pakai adminer
 
-host	:		localhost
-user	:		zeeb_arrayyan
-pass	:		esteh123456
-db			:		zeeb_arrayyan
-</pre> '
+host : localhost
+user : zeeb_arrayyan
+pass : esteh123456
+db   : zeeb_arrayyan</pre>
+'
 
 
 );
