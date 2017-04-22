@@ -30,13 +30,13 @@ user : zeeb_esteh
 pass : triosemut123
 db   : zeeb_esteh</pre>
 ',
-"arrayyan"=>'<pre>
-Login mysql pakai adminer
+"arrayyan"=>'<div><table>
+<tr><th>Login mysql pakai adminer</th></tr>
 
-host : localhost
-user : zeeb_arrayyan
-pass : esteh123456
-db   : zeeb_arrayyan</pre>
+<tr><td>host</td><td>:</td><td>localhost</td></tr>
+<tr><td>user</td><td>:</td><td>zeeb_arrayyan</td></tr>
+<tr><td>pass</td><td>:</td><td>esteh123456</td></tr>
+<tr><td>db</td><td>:</td><td>zeeb_arrayyan</td></tr></table>
 '
 
 
