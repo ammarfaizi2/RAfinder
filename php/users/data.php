@@ -5,8 +5,8 @@ $u = array(
 "kemagetan"=>"magetan",
 "ammarfaizi2"=>"triosemut123",
 "kevinkoe33"=>"triosemut123",
-"esteh"=>"triosemut123"
-
+"esteh"=>"triosemut123",
+"arrayyan"=>"esteh123"
 
 
 
