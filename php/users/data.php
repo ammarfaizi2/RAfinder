@@ -36,7 +36,7 @@ Login mysql pakai adminer
 host : localhost
 user : zeeb_arrayyan
 pass : esteh123456
-db   : zeeb_arrayyan'
+db   : zeeb_arrayyan</pre>'
 
 
 );
